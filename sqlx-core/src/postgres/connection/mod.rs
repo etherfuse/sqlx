@@ -206,3 +206,13 @@ impl Connection for PgConnection {
         !self.stream.wbuf.is_empty()
     }
 }
+
+// Implement `AsMut<Self>` so that `PgConnection` can be wrapped in
+// a `PgAdvisoryLockGuard`.
+//
+// See: https://github.com/launchbadge/sqlx/issues/2520
+impl AsMut<PgConnection> for PgConnection {
+  fn as_mut(&mut self) -> &mut PgConnection {
+      self
+  }
+}
