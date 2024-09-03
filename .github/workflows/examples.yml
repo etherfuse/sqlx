@@ -56,7 +56,7 @@ jobs:
 
     steps:
       - name: Get SQLx-CLI
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: sqlx-cli
           # $HOME is interpreted differently by the shell
@@ -110,7 +110,7 @@ jobs:
 
     steps:
       - name: Get SQLx-CLI
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: sqlx-cli
           path: /home/runner/.local/bin
@@ -256,7 +256,7 @@ jobs:
 
     steps:
       - name: Get SQLx-CLI
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: sqlx-cli
           path: /home/runner/.local/bin
